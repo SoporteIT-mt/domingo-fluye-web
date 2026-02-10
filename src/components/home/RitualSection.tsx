@@ -1,38 +1,72 @@
 import { Clock, CalendarCheck, Utensils } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
+
+const ritualItems = [
+  {
+    icon: Clock,
+    number: 90,
+    unit: "minutos",
+    desc: "Una sola sesión de cocina.",
+    gradient: "from-coral to-terracota",
+  },
+  {
+    icon: CalendarCheck,
+    number: 1,
+    unit: "vez por semana",
+    desc: "Cocinás una vez y listo.",
+    gradient: "from-miel to-terracota",
+  },
+  {
+    icon: Utensils,
+    number: 5,
+    unit: "días resueltos",
+    desc: "Sin pensar, sin estrés.",
+    gradient: "from-verde-pizarra to-secondary",
+  },
+];
 
 const RitualSection = () => {
   return (
-    <section className="section-padding">
-      <div className="container-tight text-center">
+    <section className="section-padding bg-gradient-section-reverse relative overflow-hidden">
+      {/* Decorative gradient orb */}
+      <div className="absolute -top-32 -right-32 w-64 h-64 bg-miel/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container-tight text-center relative">
         <ScrollReveal>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-4 bg-secondary/5 px-4 py-1.5 rounded-full">
+            Tu nuevo ritual
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
             El ritual que cambia tu semana
           </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg mb-14 max-w-2xl mx-auto">
             El domingo deja de ser caos y pasa a ser tu mejor estrategia.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { icon: Clock, number: "90", unit: "minutos", desc: "Una sola sesión de cocina." },
-            { icon: CalendarCheck, number: "1", unit: "vez", desc: "Cocinás una vez por semana." },
-            { icon: Utensils, number: "5", unit: "días", desc: "Resueltos sin pensar." },
-          ].map((item, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {ritualItems.map((item, i) => (
             <ScrollReveal key={item.number} delay={i * 0.15}>
               <motion.div
-                className="bg-card rounded-2xl p-8 shadow-card"
-                whileHover={{ y: -4, boxShadow: "var(--shadow-warm)" }}
-                transition={{ duration: 0.2 }}
+                className="relative bg-card rounded-2xl p-8 shadow-card overflow-hidden group"
+                whileHover={{ y: -6, boxShadow: "var(--shadow-warm-lg)" }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-primary" />
+                {/* Top gradient accent */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient}`} />
+
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <div className="font-display text-5xl text-primary mb-1">{item.number}</div>
-                <div className="text-sm uppercase tracking-wider text-muted-foreground mb-3">{item.unit}</div>
-                <p className="text-foreground/70">{item.desc}</p>
+
+                <div className="font-display text-5xl md:text-6xl text-foreground mb-2">
+                  <AnimatedCounter target={item.number} />
+                </div>
+                <div className="text-sm uppercase tracking-wider text-muted-foreground mb-4 font-medium">{item.unit}</div>
+                <p className="text-foreground/65 text-sm">{item.desc}</p>
               </motion.div>
             </ScrollReveal>
           ))}
