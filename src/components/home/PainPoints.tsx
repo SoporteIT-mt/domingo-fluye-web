@@ -7,12 +7,12 @@ const pains = [
   { emoji: "🛒", text: "Ir al súper todos los días y gastar de más." },
   { emoji: "🍕", text: "Improvisar y terminar pidiendo delivery." },
   { emoji: "🧠", text: "Cansancio mental que se acumula sin parar." },
+  { emoji: "😮‍💨", text: "Sentir que nunca llegás a todo." },
 ];
 
 const PainPoints = () => {
   return (
     <section className="section-padding bg-mesh relative overflow-hidden">
-      {/* Decorative dot pattern */}
       <div className="absolute top-10 right-10 opacity-[0.04] pointer-events-none">
         <div className="grid grid-cols-6 gap-4">
           {Array.from({ length: 24 }).map((_, i) => (
@@ -34,11 +34,43 @@ const PainPoints = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
-          {pains.map((pain, i) => (
-            <ScrollReveal key={i} delay={i * 0.1}>
+        {/* Infinite horizontal scroll of pain cards */}
+        <div className="relative overflow-hidden mb-12">
+          <div className="flex">
+            {[0, 1].map((set) => (
               <motion.div
-                className="card-premium p-5 flex items-start gap-3 cursor-default"
+                key={set}
+                className="flex shrink-0 gap-5"
+                animate={{ x: ["0%", "-100%"] }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {pains.map((pain, i) => (
+                  <div
+                    key={`${set}-${i}`}
+                    className="card-premium p-5 flex items-start gap-3 cursor-default min-w-[280px] sm:min-w-[320px]"
+                  >
+                    <span className="text-2xl flex-shrink-0 mt-0.5">{pain.emoji}</span>
+                    <span className="text-sm text-foreground/75 leading-relaxed">{pain.text}</span>
+                  </div>
+                ))}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* 3x2 static grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
+          {pains.map((pain, i) => (
+            <ScrollReveal key={i} delay={i * 0.08}>
+              <motion.div
+                className="card-premium p-5 flex items-start gap-3 cursor-default h-full"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >

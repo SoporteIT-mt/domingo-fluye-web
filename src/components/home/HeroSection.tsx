@@ -28,7 +28,7 @@ const HeroSection = () => {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Parallax background */}
+      {/* Parallax background with darker overlay */}
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <img
           src={heroImage}
@@ -36,31 +36,21 @@ const HeroSection = () => {
           className="w-full h-[120%] object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-90" />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/70 to-foreground/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-foreground/30" />
       </motion.div>
 
-      {/* Decorative floating elements */}
+      {/* Floating decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 right-[15%] w-32 h-32 rounded-full bg-miel/20 blur-2xl"
+          className="absolute top-20 right-[15%] w-32 h-32 rounded-full bg-miel/15 blur-3xl"
           animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-32 left-[10%] w-24 h-24 rounded-full bg-coral-light/20 blur-2xl"
+          className="absolute bottom-32 left-[10%] w-24 h-24 rounded-full bg-coral-light/15 blur-3xl"
           animate={{ y: [0, 15, 0], scale: [1, 0.9, 1] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <motion.div
-          className="absolute top-1/3 right-[5%] w-3 h-3 rounded-full bg-miel"
-          animate={{ y: [0, -30, 0], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 left-[20%] w-2 h-2 rounded-full bg-primary-foreground/40"
-          animate={{ y: [0, -20, 0], opacity: [0.4, 0.8, 0.4] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         />
       </div>
 
@@ -79,7 +69,7 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="font-display text-4xl md:text-5xl lg:text-[3.5rem] text-primary-foreground leading-[1.1] mb-6"
+              className="font-display text-4xl md:text-5xl lg:text-[3.5rem] text-primary-foreground leading-[1.1] mb-6 drop-shadow-lg"
             >
               Si el domingo está resuelto,{" "}
               <span className="relative inline-block">
@@ -95,7 +85,7 @@ const HeroSection = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-primary-foreground/75 mb-8 max-w-lg leading-relaxed"
+              className="text-lg md:text-xl text-primary-foreground/85 mb-8 max-w-lg leading-relaxed drop-shadow-sm"
             >
               Un sistema mensual para cocinar en 90 minutos y olvidarte del caos el resto de la semana.
             </motion.p>
@@ -108,15 +98,15 @@ const HeroSection = () => {
               ].map((item, i) => (
                 <motion.li
                   key={item}
-                  className="flex items-center gap-3 text-primary-foreground/85"
+                  className="flex items-center gap-3 text-primary-foreground/90"
                   initial={{ opacity: 0, x: -15 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.9 + i * 0.15, duration: 0.5 }}
                 >
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-miel/20 flex items-center justify-center backdrop-blur-sm">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-miel/25 flex items-center justify-center backdrop-blur-sm">
                     <Check size={13} className="text-miel" />
                   </span>
-                  <span className="text-base font-light">{item}</span>
+                  <span className="text-base font-medium">{item}</span>
                 </motion.li>
               ))}
             </motion.ul>
@@ -142,7 +132,7 @@ const HeroSection = () => {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-4 text-sm text-primary-foreground/50"
+              className="flex flex-wrap gap-4 text-sm text-primary-foreground/60"
             >
               {["Cancelás cuando quieras", "Acceso inmediato", "Sin permanencia"].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
@@ -153,16 +143,15 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Manual mockup with floating animation */}
+          {/* Manual mockup */}
           <motion.div
             className="hidden lg:flex justify-center relative"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 }}
           >
-            {/* Glow behind mockup */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-64 h-64 bg-coral-light/20 rounded-full blur-3xl" />
+              <div className="w-64 h-64 bg-coral-light/15 rounded-full blur-3xl" />
             </div>
             <motion.img
               src={manualImage}
@@ -171,7 +160,6 @@ const HeroSection = () => {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
-            {/* Floating badge */}
             <motion.div
               className="absolute -bottom-4 -left-4 glass px-4 py-3 rounded-xl shadow-warm-lg"
               animate={{ y: [0, -6, 0] }}
