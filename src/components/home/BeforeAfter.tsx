@@ -1,6 +1,7 @@
 import { X, Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import beforeAfterImg from "@/assets/before-after.jpg";
 
 const before = [
   "Estrés diario por las comidas",
@@ -31,6 +32,12 @@ const BeforeAfter = () => {
             <p className="font-display text-3xl md:text-4xl lg:text-5xl text-gradient-coral">
               desde la primera semana
             </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <div className="mb-10 rounded-2xl overflow-hidden shadow-card border border-border max-w-3xl mx-auto">
+            <img src={beforeAfterImg} alt="Antes y después: cocina caótica vs organizada" className="w-full h-48 md:h-56 object-cover" />
           </div>
         </ScrollReveal>
 

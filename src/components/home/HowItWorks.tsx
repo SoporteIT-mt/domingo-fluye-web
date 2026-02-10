@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { UserPlus, Download, ChefHat, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import howItWorksImg from "@/assets/how-it-works.jpg";
 
 const steps = [
   {
@@ -48,34 +49,38 @@ const HowItWorks = () => {
           </div>
         </ScrollReveal>
 
-        <div className="relative max-w-3xl mx-auto">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-primary/20 via-miel/20 to-secondary/20" />
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_240px] gap-8 max-w-4xl mx-auto items-start">
+          <div className="relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-primary/20 via-miel/20 to-secondary/20" />
 
-          <div className="space-y-6">
-            {steps.map((s, i) => (
-              <ScrollReveal key={s.step} delay={i * 0.2}>
-                <motion.div
-                  className="flex gap-6 items-start relative"
-                  whileHover={{ x: 4 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {/* Step number circle */}
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-2xl ${s.bgColor} flex items-center justify-center shadow-card border border-border relative z-10`}>
-                    <s.icon className={`w-7 h-7 ${s.color}`} />
-                  </div>
-
-                  <div className="bg-card rounded-2xl p-6 flex-1 shadow-card border border-border hover:border-primary/20 transition-colors">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-bold uppercase tracking-widest text-primary/60">Paso {s.step}</span>
+            <div className="space-y-6">
+              {steps.map((s, i) => (
+                <ScrollReveal key={s.step} delay={i * 0.2}>
+                  <motion.div
+                    className="flex gap-6 items-start relative"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className={`flex-shrink-0 w-16 h-16 rounded-2xl ${s.bgColor} flex items-center justify-center shadow-card border border-border relative z-10`}>
+                      <s.icon className={`w-7 h-7 ${s.color}`} />
                     </div>
-                    <h3 className="font-display text-xl text-foreground mb-1.5">{s.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-                  </div>
-                </motion.div>
-              </ScrollReveal>
-            ))}
+                    <div className="bg-card rounded-2xl p-6 flex-1 shadow-card border border-border hover:border-primary/20 transition-colors">
+                      <span className="text-xs font-bold uppercase tracking-widest text-primary/60">Paso {s.step}</span>
+                      <h3 className="font-display text-xl text-foreground mb-1.5 mt-1">{s.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
+
+          <ScrollReveal delay={0.3}>
+            <div className="hidden md:block rounded-2xl overflow-hidden shadow-card border border-border sticky top-32">
+              <img src={howItWorksImg} alt="Plan de recetas organizado" className="w-full h-auto object-cover" />
+            </div>
+          </ScrollReveal>
         </div>
 
         <ScrollReveal delay={0.6}>
