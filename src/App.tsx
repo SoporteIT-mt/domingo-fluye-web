@@ -15,6 +15,7 @@ import Legal from "./pages/Legal";
 import Blog from "./pages/Blog";
 import Recetas from "./pages/Recetas";
 import NotFound from "./pages/NotFound";
+import CursorTrail from "./components/CursorTrail";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <CursorTrail />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
