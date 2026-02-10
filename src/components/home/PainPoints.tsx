@@ -14,9 +14,10 @@ const pains = [
 const PainPoints = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* Subtle warm gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-soft-peach to-background pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-soft-peach via-soft-peach/80 to-accent/40 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-coral/12 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-16 -right-16 w-56 h-56 bg-miel/15 rounded-full blur-[80px] pointer-events-none" />
       {/* Decorative dot pattern */}
       <div className="absolute top-10 right-10 opacity-[0.04] pointer-events-none">
         <div className="grid grid-cols-6 gap-4">
