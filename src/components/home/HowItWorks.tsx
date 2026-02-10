@@ -9,21 +9,24 @@ const steps = [
     step: "01",
     title: "Te unís al Club",
     desc: "Elegís tu plan, te suscribís y accedés al instante.",
-    color: "from-coral to-vino",
+    color: "text-vino",
+    bgColor: "bg-primary/10",
   },
   {
     icon: Download,
     step: "02",
     title: "Descargás el manual del mes",
     desc: "40 recetas, listas de compras, calendario y sistema freezer.",
-    color: "from-miel to-terracota",
+    color: "text-terracota",
+    bgColor: "bg-terracota/10",
   },
   {
     icon: ChefHat,
     step: "03",
     title: "Cocinás el domingo",
     desc: "90 minutos y tu semana queda resuelta.",
-    color: "from-verde-pizarra to-secondary",
+    color: "text-secondary",
+    bgColor: "bg-secondary/10",
   },
 ];
 
@@ -49,7 +52,7 @@ const HowItWorks = () => {
           {/* Connecting line */}
           <div className="hidden md:block absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-primary/20 via-miel/20 to-secondary/20" />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {steps.map((s, i) => (
               <ScrollReveal key={s.step} delay={i * 0.2}>
                 <motion.div
@@ -58,11 +61,11 @@ const HowItWorks = () => {
                   transition={{ duration: 0.2 }}
                 >
                   {/* Step number circle */}
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center shadow-lg relative z-10`}>
-                    <s.icon className="w-7 h-7 text-primary-foreground" />
+                  <div className={`flex-shrink-0 w-16 h-16 rounded-2xl ${s.bgColor} flex items-center justify-center shadow-card border border-border relative z-10`}>
+                    <s.icon className={`w-7 h-7 ${s.color}`} />
                   </div>
 
-                  <div className="card-premium p-6 flex-1">
+                  <div className="bg-card rounded-2xl p-6 flex-1 shadow-card border border-border hover:border-primary/20 transition-colors">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-xs font-bold uppercase tracking-widest text-primary/60">Paso {s.step}</span>
                     </div>

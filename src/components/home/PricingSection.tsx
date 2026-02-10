@@ -6,7 +6,6 @@ import ScrollReveal from "@/components/ScrollReveal";
 const PricingSection = () => {
   return (
     <section className="section-padding bg-mesh relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-coral/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
 
       <div className="container-tight text-center relative">
@@ -27,7 +26,7 @@ const PricingSection = () => {
           <ScrollReveal delay={0.1}>
             <motion.div
               className="bg-card rounded-2xl p-8 shadow-card border border-border h-full flex flex-col"
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -4, boxShadow: "var(--shadow-warm-lg)" }}
               transition={{ duration: 0.3 }}
             >
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">Mensual</div>
@@ -55,8 +54,8 @@ const PricingSection = () => {
           {/* Annual */}
           <ScrollReveal delay={0.25}>
             <motion.div
-              className="relative bg-card rounded-2xl p-8 border-2 border-primary/30 h-full flex flex-col animate-pulse-glow"
-              whileHover={{ y: -4 }}
+              className="relative bg-card rounded-2xl p-8 border-2 border-primary/20 shadow-card h-full flex flex-col"
+              whileHover={{ y: -4, boxShadow: "var(--shadow-warm-lg)" }}
               transition={{ duration: 0.3 }}
             >
               {/* Best price badge */}

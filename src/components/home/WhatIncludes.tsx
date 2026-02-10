@@ -3,20 +3,19 @@ import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const features = [
-  { icon: BookOpen, title: "Manual mensual completo", desc: "Todo organizado en un solo documento descargable.", color: "from-coral to-vino" },
-  { icon: UtensilsCrossed, title: "40 recetas reales", desc: "Comida de familia, práctica y riquísima.", color: "from-terracota to-coral" },
-  { icon: ShoppingCart, title: "Lista de compras inteligente", desc: "Comprás una vez, cocinás toda la semana.", color: "from-miel to-terracota" },
-  { icon: Snowflake, title: "Sistema freezer paso a paso", desc: "Qué freezar, cómo y cuándo descongelar.", color: "from-verde-pizarra to-secondary" },
-  { icon: Repeat, title: "Sustituciones prácticas", desc: "Si no conseguís algo, siempre hay alternativa.", color: "from-coral to-terracota" },
-  { icon: CalendarDays, title: "Calendario semanal", desc: "Día por día, sabés qué vas a cocinar.", color: "from-miel to-coral" },
-  { icon: Users, title: "Grupo privado", desc: "Comunidad de familias que cocinan con sistema.", color: "from-verde-pizarra to-coral" },
-  { icon: Mail, title: "Email recordatorio", desc: "Cada semana te avisamos qué preparar.", color: "from-terracota to-vino" },
+  { icon: BookOpen, title: "Manual mensual completo", desc: "Todo organizado en un solo documento descargable.", color: "text-vino", bgColor: "bg-vino/10" },
+  { icon: UtensilsCrossed, title: "40 recetas reales", desc: "Comida de familia, práctica y riquísima.", color: "text-primary", bgColor: "bg-primary/10" },
+  { icon: ShoppingCart, title: "Lista de compras inteligente", desc: "Comprás una vez, cocinás toda la semana.", color: "text-terracota", bgColor: "bg-terracota/10" },
+  { icon: Snowflake, title: "Sistema freezer paso a paso", desc: "Qué freezar, cómo y cuándo descongelar.", color: "text-secondary", bgColor: "bg-secondary/10" },
+  { icon: Repeat, title: "Sustituciones prácticas", desc: "Si no conseguís algo, siempre hay alternativa.", color: "text-primary", bgColor: "bg-primary/10" },
+  { icon: CalendarDays, title: "Calendario semanal", desc: "Día por día, sabés qué vas a cocinar.", color: "text-miel", bgColor: "bg-miel/15" },
+  { icon: Users, title: "Grupo privado", desc: "Comunidad de familias que cocinan con sistema.", color: "text-secondary", bgColor: "bg-secondary/10" },
+  { icon: Mail, title: "Email recordatorio", desc: "Cada semana te avisamos qué preparar.", color: "text-terracota", bgColor: "bg-terracota/10" },
 ];
 
 const WhatIncludes = () => {
   return (
     <section className="section-padding bg-mesh relative overflow-hidden">
-      {/* Decorative orbs */}
       <div className="absolute top-20 right-[5%] w-48 h-48 bg-miel/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-[5%] w-36 h-36 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -39,15 +38,12 @@ const WhatIncludes = () => {
           {features.map((f, i) => (
             <ScrollReveal key={f.title} delay={i * 0.08}>
               <motion.div
-                className="relative bg-card rounded-2xl p-6 shadow-card group overflow-hidden h-full"
+                className="relative bg-card rounded-2xl p-6 shadow-card border border-border group overflow-hidden h-full"
                 whileHover={{ y: -6, boxShadow: "var(--shadow-warm-lg)" }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Top gradient line */}
-                <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${f.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
-
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${f.color} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md`}>
-                  <f.icon className="w-5 h-5 text-primary-foreground" />
+                <div className={`w-12 h-12 rounded-xl ${f.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <f.icon className={`w-6 h-6 ${f.color}`} />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1.5 text-sm">{f.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
