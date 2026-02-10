@@ -15,7 +15,9 @@ const features = [
 
 const WhatIncludes = () => {
   return (
-    <section className="section-padding bg-mesh relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/30 to-background pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/20 to-transparent" />
       <div className="absolute top-20 right-[5%] w-48 h-48 bg-miel/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-[5%] w-36 h-36 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
 
