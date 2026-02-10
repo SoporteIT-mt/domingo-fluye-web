@@ -25,7 +25,7 @@ const ComoFunciona = () => {
   return (
     <Layout>
       <SEOHead
-        title="Cómo funciona — El Club de los Domingos"
+        title="Cómo funciona — Cocina en Flor"
         description="Descubrí cómo funciona el sistema de planificación semanal de comidas. Tres pasos simples para organizar tu cocina."
         path="/como-funciona"
       />
@@ -55,7 +55,7 @@ const ComoFunciona = () => {
           <div className="text-center mt-16">
             <Link
               to="/planes"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-cta hover:bg-terracotta-dark transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-cta hover:bg-vino transition-colors"
             >
               Quiero empezar <ArrowRight size={18} />
             </Link>

@@ -6,7 +6,7 @@ const Contacto = () => {
   return (
     <Layout>
       <SEOHead
-        title="Contacto — El Club de los Domingos"
+        title="Contacto — Cocina en Flor"
         description="¿Tenés preguntas? Escribinos y te respondemos a la brevedad."
         path="/contacto"
       />
@@ -50,7 +50,7 @@ const Contacto = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-semibold shadow-cta hover:bg-terracotta-dark transition-colors"
+                className="w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-semibold shadow-cta hover:bg-vino transition-colors"
               >
                 Enviar mensaje
               </button>

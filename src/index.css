@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 25 25% 15%;
 
-    --primary: 18 65% 48%;
-    --primary-foreground: 35 30% 97%;
+    --primary: 352 79% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 152 22% 42%;
-    --secondary-foreground: 35 30% 97%;
+    --secondary: 188 12% 60%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 30 20% 93%;
     --muted-foreground: 25 15% 45%;
 
-    --accent: 32 45% 91%;
+    --accent: 39 80% 92%;
     --accent-foreground: 25 25% 15%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,34 +32,38 @@
 
     --border: 30 15% 88%;
     --input: 30 15% 88%;
-    --ring: 18 65% 48%;
+    --ring: 352 79% 65%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 35 30% 97%;
     --sidebar-foreground: 25 25% 15%;
-    --sidebar-primary: 18 65% 48%;
-    --sidebar-primary-foreground: 35 30% 97%;
-    --sidebar-accent: 32 45% 91%;
+    --sidebar-primary: 352 79% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 39 80% 92%;
     --sidebar-accent-foreground: 25 25% 15%;
     --sidebar-border: 30 15% 88%;
-    --sidebar-ring: 18 65% 48%;
+    --sidebar-ring: 352 79% 65%;
 
-    /* Custom tokens */
+    /* Brand tokens */
+    --coral: 352 79% 65%;
+    --coral-light: 352 70% 78%;
+    --miel: 39 97% 77%;
+    --miel-light: 39 80% 92%;
+    --verde-pizarra: 188 12% 60%;
+    --verde-pizarra-light: 188 10% 75%;
+    --terracota: 15 71% 66%;
+    --vino: 2 31% 45%;
+
     --warm-cream: 35 35% 95%;
-    --terracotta: 18 65% 48%;
-    --terracotta-light: 18 55% 60%;
-    --terracotta-dark: 18 70% 38%;
-    --sage: 152 22% 42%;
-    --sage-light: 152 18% 55%;
+    --soft-peach: 352 40% 96%;
     --deep-brown: 25 35% 20%;
     --warm-beige: 32 30% 85%;
-    --soft-peach: 20 50% 94%;
 
     --shadow-warm: 0 4px 20px -4px hsl(25 30% 15% / 0.08);
     --shadow-warm-lg: 0 10px 40px -8px hsl(25 30% 15% / 0.12);
     --shadow-card: 0 2px 12px -2px hsl(25 30% 15% / 0.06);
-    --shadow-cta: 0 6px 24px -4px hsl(18 65% 48% / 0.35);
+    --shadow-cta: 0 6px 24px -4px hsl(352 79% 65% / 0.35);
 
     --font-display: 'DM Serif Display', serif;
     --font-body: 'DM Sans', sans-serif;
@@ -72,27 +76,27 @@
     --card-foreground: 35 20% 90%;
     --popover: 25 20% 12%;
     --popover-foreground: 35 20% 90%;
-    --primary: 18 65% 55%;
+    --primary: 352 79% 70%;
     --primary-foreground: 25 20% 8%;
-    --secondary: 152 22% 35%;
+    --secondary: 188 12% 50%;
     --secondary-foreground: 35 20% 90%;
     --muted: 25 15% 18%;
     --muted-foreground: 30 15% 60%;
-    --accent: 25 20% 18%;
+    --accent: 39 60% 25%;
     --accent-foreground: 35 20% 90%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 25 15% 20%;
     --input: 25 15% 20%;
-    --ring: 18 65% 55%;
+    --ring: 352 79% 70%;
     --sidebar-background: 25 20% 10%;
     --sidebar-foreground: 35 20% 90%;
-    --sidebar-primary: 18 65% 55%;
+    --sidebar-primary: 352 79% 70%;
     --sidebar-primary-foreground: 25 20% 8%;
     --sidebar-accent: 25 20% 15%;
     --sidebar-accent-foreground: 35 20% 90%;
     --sidebar-border: 25 15% 20%;
-    --sidebar-ring: 18 65% 55%;
+    --sidebar-ring: 352 79% 70%;
   }
 }
 
@@ -114,7 +118,7 @@
 @layer components {
   .text-gradient-warm {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--terracotta)), hsl(var(--terracotta-dark)));
+    background-image: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--vino)));
   }
 
   .bg-warm-cream {

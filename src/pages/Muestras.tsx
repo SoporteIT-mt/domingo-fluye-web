@@ -6,8 +6,8 @@ const Muestras = () => {
   return (
     <Layout>
       <SEOHead
-        title="Muestras gratis — El Club de los Domingos"
-        description="Descargá una muestra gratuita del manual mensual del Club de los Domingos. Probá el sistema antes de suscribirte."
+        title="Muestras gratis — Cocina en Flor"
+        description="Descargá una muestra gratuita del manual mensual de Cocina en Flor. Probá el sistema antes de suscribirte."
         path="/muestras"
       />
       <section className="section-padding pt-24 md:pt-32">
@@ -27,7 +27,7 @@ const Muestras = () => {
             <p className="text-muted-foreground mb-6">
               Una semana del Club: 10 recetas, lista de compras y calendario.
             </p>
-            <button className="w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-semibold shadow-cta hover:bg-terracotta-dark transition-colors">
+            <button className="w-full bg-primary text-primary-foreground py-3.5 rounded-xl font-semibold shadow-cta hover:bg-vino transition-colors">
               Descargar muestra gratis
             </button>
             <p className="text-xs text-muted-foreground mt-3">Sin compromiso. Sin tarjeta.</p>

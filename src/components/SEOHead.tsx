@@ -7,13 +7,13 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
-  const siteUrl = "https://elclubdelosdomingos.com";
+  const siteUrl = "https://cocinaenflor.com";
   const fullUrl = `${siteUrl}${path}`;
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "El Club de los Domingos",
+    name: "Cocina en Flor",
     url: siteUrl,
     description: "Sistema mensual de planificación de comidas para familias argentinas.",
   };

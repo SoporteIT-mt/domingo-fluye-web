@@ -7,7 +7,7 @@ const Gracias = () => {
   return (
     <Layout>
       <SEOHead
-        title="¡Bienvenida al Club! — El Club de los Domingos"
+        title="¡Bienvenida al Club! — Cocina en Flor"
         description="Tu suscripción está activa. Descargá tu primer manual y empezá este domingo."
         path="/gracias"
       />
@@ -24,7 +24,7 @@ const Gracias = () => {
           </p>
           <Link
             to="/"
-            className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-cta hover:bg-terracotta-dark transition-colors"
+            className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-cta hover:bg-vino transition-colors"
           >
             Volver al inicio
           </Link>
