@@ -2,6 +2,7 @@ import { Clock, CalendarCheck, Utensils } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import ritualImg from "@/assets/ritual-cooking.jpg";
 
 const ritualItems = [
   {
@@ -47,6 +48,12 @@ const RitualSection = () => {
           <p className="text-muted-foreground text-lg mb-14 max-w-2xl mx-auto">
             El domingo deja de ser caos y pasa a ser tu mejor estrategia.
           </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <div className="mb-10 rounded-2xl overflow-hidden shadow-card border border-border max-w-2xl mx-auto">
+            <img src={ritualImg} alt="Sesión de cocina dominical con ingredientes frescos" className="w-full h-48 md:h-64 object-cover" />
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
