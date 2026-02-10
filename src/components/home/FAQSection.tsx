@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParallaxBlob from "@/components/ParallaxBlob";
 
 const faqs = [
   { q: "¿Es para principiantes en la cocina?", a: "¡Sí! Las recetas son simples, con ingredientes comunes y pasos claros. No necesitás experiencia previa." },
@@ -21,7 +22,7 @@ const FAQSection = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-soft-peach/60 via-accent/35 to-soft-peach/50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      <div className="absolute top-1/3 -left-20 w-64 h-64 bg-primary/6 rounded-full blur-[80px] pointer-events-none" />
+      <ParallaxBlob className="absolute top-1/3 -left-20 w-64 h-64 bg-primary/6 rounded-full blur-[80px] pointer-events-none" speed={-0.15} />
       {/* Decorative icon */}
       <div className="absolute top-20 right-[8%] opacity-[0.03] pointer-events-none">
         <HelpCircle size={180} />

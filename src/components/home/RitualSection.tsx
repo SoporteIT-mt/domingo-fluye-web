@@ -1,6 +1,7 @@
 import { Clock, CalendarCheck, Utensils } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParallaxBlob from "@/components/ParallaxBlob";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ritualImg from "@/assets/ritual-cooking.jpg";
 
@@ -36,8 +37,8 @@ const RitualSection = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-accent/50 via-miel-light/40 to-soft-peach/60 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/30 to-transparent" />
-      <div className="absolute -top-32 -right-32 w-80 h-80 bg-miel/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-coral/10 rounded-full blur-[80px] pointer-events-none" />
+      <ParallaxBlob className="absolute -top-32 -right-32 w-80 h-80 bg-miel/20 rounded-full blur-[100px] pointer-events-none" speed={-0.2} />
+      <ParallaxBlob className="absolute -bottom-20 -left-20 w-64 h-64 bg-coral/10 rounded-full blur-[80px] pointer-events-none" speed={0.18} />
 
       <div className="container-tight text-center relative">
         <ScrollReveal>

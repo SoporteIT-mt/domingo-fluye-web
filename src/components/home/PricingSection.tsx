@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import { Check, Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParallaxBlob from "@/components/ParallaxBlob";
 
 const PricingSection = () => {
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-soft-peach/80 via-accent/35 to-soft-peach/60 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-coral/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-miel/12 rounded-full blur-[80px] pointer-events-none" />
+      <ParallaxBlob className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-coral/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" speed={-0.1} />
+      <ParallaxBlob className="absolute bottom-0 right-0 w-64 h-64 bg-miel/12 rounded-full blur-[80px] pointer-events-none" speed={0.2} />
 
       <div className="container-tight text-center relative">
         <ScrollReveal>
