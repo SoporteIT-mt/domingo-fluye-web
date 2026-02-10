@@ -6,7 +6,7 @@ const Planes = () => {
   return (
     <Layout>
       <SEOHead
-        title="Planes — El Club de los Domingos"
+        title="Planes — Cocina en Flor"
         description="Elegí tu plan para organizar tu cocina semanal. Desde $7.999 ARS/mes. Sin permanencia, cancelás cuando quieras."
         path="/planes"
       />

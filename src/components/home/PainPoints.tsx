@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 const PainPoints = () => {
   const pains = [
     "\"¿Qué comemos hoy?\" — todos los días lo mismo.",
@@ -10,24 +12,30 @@ const PainPoints = () => {
   return (
     <section className="section-padding bg-soft-peach">
       <div className="container-tight text-center">
-        <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-          ¿Te pasa que todos los días es la misma pregunta?
-        </h2>
-        <div className="w-16 h-1 bg-primary mx-auto mb-10 rounded-full" />
+        <ScrollReveal>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+            ¿Te pasa que todos los días es la misma pregunta?
+          </h2>
+          <div className="w-16 h-1 bg-primary mx-auto mb-10 rounded-full" />
+        </ScrollReveal>
 
-        <ul className="space-y-4 max-w-xl mx-auto text-left mb-10">
-          {pains.map((pain, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-primary" />
-              <span className="text-lg text-foreground/80">{pain}</span>
-            </li>
-          ))}
-        </ul>
+        <ScrollReveal delay={0.15}>
+          <ul className="space-y-4 max-w-xl mx-auto text-left mb-10">
+            {pains.map((pain, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="flex-shrink-0 mt-1 w-2 h-2 rounded-full bg-primary" />
+                <span className="text-lg text-foreground/80">{pain}</span>
+              </li>
+            ))}
+          </ul>
+        </ScrollReveal>
 
-        <p className="text-xl md:text-2xl font-display text-foreground">
-          No es falta de organización.<br />
-          <span className="text-primary">Es falta de sistema.</span>
-        </p>
+        <ScrollReveal delay={0.3}>
+          <p className="text-xl md:text-2xl font-display text-foreground">
+            No es falta de organización.<br />
+            <span className="text-primary">Es falta de sistema.</span>
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );

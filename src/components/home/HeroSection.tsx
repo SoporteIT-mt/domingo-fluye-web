@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-kitchen.jpg";
 import manualImage from "@/assets/manual-mockup.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
@@ -19,7 +19,12 @@ const HeroSection = () => {
 
       <div className="relative container-wide py-20 md:py-32 lg:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div className="animate-fade-up">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Cocina en Flor</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
               Si el domingo está resuelto, tu semana también.
             </h1>
@@ -45,7 +50,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Link
                 to="/planes"
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-center font-semibold text-lg shadow-cta hover:bg-terracotta-dark transition-colors"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-center font-semibold text-lg shadow-cta hover:bg-vino transition-colors"
               >
                 Quiero ordenar mi semana
               </Link>
@@ -62,15 +67,20 @@ const HeroSection = () => {
               <span>✓ Acceso inmediato</span>
               <span>✓ Sin permanencia</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hidden lg:flex justify-center">
+          <motion.div
+            className="hidden lg:flex justify-center"
+            initial={{ opacity: 0, scale: 0.9, rotate: 4 }}
+            animate={{ opacity: 1, scale: 1, rotate: 2 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          >
             <img
               src={manualImage}
-              alt="Manual mensual del Club de los Domingos"
-              className="w-72 rounded-2xl shadow-warm-lg rotate-2 hover:rotate-0 transition-transform duration-500"
+              alt="Manual mensual de Cocina en Flor"
+              className="w-72 rounded-2xl shadow-warm-lg hover:rotate-0 transition-transform duration-500"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

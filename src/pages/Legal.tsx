@@ -5,15 +5,15 @@ const Legal = () => {
   return (
     <Layout>
       <SEOHead
-        title="Legal — El Club de los Domingos"
-        description="Términos y condiciones, política de privacidad del Club de los Domingos."
+        title="Legal — Cocina en Flor"
+        description="Términos y condiciones, política de privacidad de Cocina en Flor."
         path="/legal"
       />
       <section className="section-padding pt-24 md:pt-32">
         <div className="container-tight prose prose-neutral max-w-2xl mx-auto">
           <h1 className="font-display text-4xl text-foreground">Términos y Condiciones</h1>
           <p className="text-muted-foreground">
-            Al suscribirte al Club de los Domingos, aceptás los siguientes términos:
+            Al suscribirte a Cocina en Flor — El Club de los Domingos, aceptás los siguientes términos:
           </p>
           <ul className="text-muted-foreground space-y-2">
             <li>La suscripción se renueva automáticamente cada mes o año según el plan elegido.</li>

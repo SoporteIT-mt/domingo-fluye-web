@@ -5,7 +5,8 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { label: "Cómo funciona", href: "/como-funciona" },
   { label: "Planes", href: "/planes" },
-  { label: "Muestras", href: "/muestras" },
+  { label: "Recetas", href: "/recetas" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Contacto", href: "/contacto" },
 ];
@@ -35,7 +36,7 @@ const Navbar = () => {
     >
       <nav className="container-wide flex items-center justify-between py-4">
         <Link to="/" className="font-display text-xl md:text-2xl text-foreground tracking-tight">
-          El Club de los Domingos
+          Cocina en Flor
         </Link>
 
         {/* Desktop nav */}
@@ -51,7 +52,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/planes"
-            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-terracotta-dark transition-colors shadow-cta"
+            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-vino transition-colors shadow-cta"
           >
             Quiero unirme
           </Link>
