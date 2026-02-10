@@ -34,8 +34,10 @@ const steps = [
 const HowItWorks = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-soft-peach/40 via-background to-accent/20 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-soft-peach/70 via-accent/30 to-soft-peach/50 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-1/3 -right-20 w-72 h-72 bg-primary/8 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 -left-16 w-56 h-56 bg-terracota/8 rounded-full blur-[80px] pointer-events-none" />
       <div className="container-tight relative">
         <ScrollReveal>
           <div className="text-center mb-14">

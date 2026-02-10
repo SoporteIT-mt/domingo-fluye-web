@@ -34,10 +34,10 @@ const ritualItems = [
 const RitualSection = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/25 via-background to-soft-peach/40 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/20 to-transparent" />
-      <div className="absolute -top-32 -right-32 w-64 h-64 bg-miel/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/50 via-miel-light/40 to-soft-peach/60 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/30 to-transparent" />
+      <div className="absolute -top-32 -right-32 w-80 h-80 bg-miel/20 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-coral/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="container-tight text-center relative">
         <ScrollReveal>

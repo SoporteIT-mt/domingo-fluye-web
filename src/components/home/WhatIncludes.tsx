@@ -16,10 +16,10 @@ const features = [
 const WhatIncludes = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/30 to-background pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/20 to-transparent" />
-      <div className="absolute top-20 right-[5%] w-48 h-48 bg-miel/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-[5%] w-36 h-36 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/45 via-miel-light/30 to-soft-peach/50 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/30 to-transparent" />
+      <div className="absolute top-20 right-[5%] w-64 h-64 bg-miel/18 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-20 left-[5%] w-56 h-56 bg-coral/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="container-wide relative">
         <ScrollReveal>

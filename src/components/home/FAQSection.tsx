@@ -19,8 +19,9 @@ const faqs = [
 const FAQSection = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/20 to-soft-peach/40 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-soft-peach/60 via-accent/35 to-soft-peach/50 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-1/3 -left-20 w-64 h-64 bg-primary/6 rounded-full blur-[80px] pointer-events-none" />
       {/* Decorative icon */}
       <div className="absolute top-20 right-[8%] opacity-[0.03] pointer-events-none">
         <HelpCircle size={180} />
