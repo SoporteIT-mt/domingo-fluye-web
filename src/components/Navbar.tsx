@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Cómo funciona", href: "/como-funciona" },
@@ -28,68 +29,99 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-warm"
+          ? "bg-card/80 backdrop-blur-xl shadow-warm border-b border-border/50"
           : "bg-transparent"
       }`}
     >
-      <nav className="container-wide flex items-center justify-between py-4">
-        <Link to="/" className="font-display text-xl md:text-2xl text-foreground tracking-tight">
-          Cocina en Flor
+      <nav className="container-wide flex items-center justify-between py-3.5">
+        <Link to="/" className="group flex items-center gap-2">
+          <span className="font-display text-xl md:text-2xl text-foreground tracking-tight group-hover:text-primary transition-colors">
+            Cocina en Flor
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                location.pathname === item.href
+                  ? "text-primary bg-primary/5"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+              }`}
             >
               {item.label}
             </Link>
           ))}
           <Link
             to="/planes"
-            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-vino transition-colors shadow-cta"
+            className="group ml-3 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-vino transition-all duration-300 shadow-cta hover:shadow-glow flex items-center gap-1.5"
           >
             Quiero unirme
+            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
 
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-foreground rounded-lg hover:bg-muted/50 transition-colors"
           aria-label="Menú"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-card border-t border-border animate-fade-in">
-          <div className="container-wide py-4 flex flex-col gap-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-card/95 backdrop-blur-xl border-t border-border/50 overflow-hidden"
+          >
+            <div className="container-wide py-4 flex flex-col gap-1">
+              {navItems.map((item, i) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={item.href}
+                    className={`block py-2.5 px-3 rounded-lg text-base font-medium transition-colors ${
+                      location.pathname === item.href
+                        ? "text-primary bg-primary/5"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.05 }}
               >
-                {item.label}
-              </Link>
-            ))}
-            <Link
-              to="/planes"
-              className="mt-2 bg-primary text-primary-foreground px-5 py-3 rounded-lg text-center font-semibold shadow-cta"
-            >
-              Quiero unirme
-            </Link>
-          </div>
-        </div>
-      )}
+                <Link
+                  to="/planes"
+                  className="mt-2 block bg-primary text-primary-foreground px-5 py-3.5 rounded-xl text-center font-semibold shadow-cta"
+                >
+                  Quiero unirme
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

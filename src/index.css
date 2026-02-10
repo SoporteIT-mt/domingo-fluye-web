@@ -64,6 +64,7 @@
     --shadow-warm-lg: 0 10px 40px -8px hsl(25 30% 15% / 0.12);
     --shadow-card: 0 2px 12px -2px hsl(25 30% 15% / 0.06);
     --shadow-cta: 0 6px 24px -4px hsl(352 79% 65% / 0.35);
+    --shadow-glow: 0 0 40px -8px hsl(352 79% 65% / 0.3);
 
     --font-display: 'DM Serif Display', serif;
     --font-body: 'DM Sans', sans-serif;
@@ -121,12 +122,87 @@
     background-image: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--vino)));
   }
 
+  .text-gradient-coral {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--terracota)));
+  }
+
+  .text-gradient-miel {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--miel)), hsl(var(--terracota)));
+  }
+
   .bg-warm-cream {
     background-color: hsl(var(--warm-cream));
   }
 
   .bg-soft-peach {
     background-color: hsl(var(--soft-peach));
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--vino)) 0%, hsl(var(--coral) / 0.9) 40%, hsl(var(--terracota) / 0.7) 100%);
+  }
+
+  .bg-gradient-section {
+    background: linear-gradient(180deg, hsl(var(--soft-peach)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .bg-gradient-section-reverse {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--soft-peach)) 100%);
+  }
+
+  .bg-mesh {
+    background:
+      radial-gradient(ellipse at 20% 50%, hsl(var(--coral) / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(var(--miel) / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, hsl(var(--verde-pizarra) / 0.06) 0%, transparent 50%),
+      hsl(var(--background));
+  }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(0 0% 100% / 0.4);
+  }
+
+  .glass-dark {
+    background: hsl(25 25% 15% / 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  .card-premium {
+    @apply bg-card rounded-2xl shadow-card;
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-warm-lg);
+    border-color: hsl(var(--coral) / 0.2);
+  }
+
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: 1rem;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(1rem + 2px);
+    background: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--miel)), hsl(var(--coral)));
+    z-index: -1;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px -8px hsl(var(--coral) / 0.35), 0 0 80px -16px hsl(var(--coral) / 0.15);
   }
 
   .section-padding {
@@ -151,19 +227,68 @@
     animation: fadeIn 0.5s ease-out forwards;
   }
 
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay {
+    animation: float 5s ease-in-out 1s infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2.5s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
   @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px -5px hsl(var(--coral) / 0.3), 0 4px 20px -4px hsl(25 30% 15% / 0.08); }
+    50% { box-shadow: 0 0 40px -5px hsl(var(--coral) / 0.45), 0 4px 20px -4px hsl(25 30% 15% / 0.08); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
   }
 }
