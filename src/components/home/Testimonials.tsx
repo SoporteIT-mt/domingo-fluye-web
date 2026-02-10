@@ -1,6 +1,7 @@
 import { Star, Quote } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParallaxBlob from "@/components/ParallaxBlob";
 
 const testimonials = [
   {
@@ -37,7 +38,7 @@ const Testimonials = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-accent/40 via-soft-peach/60 to-accent/30 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/25 to-transparent" />
-      <div className="absolute -top-20 right-[10%] w-72 h-72 bg-secondary/8 rounded-full blur-[100px] pointer-events-none" />
+      <ParallaxBlob className="absolute -top-20 right-[10%] w-72 h-72 bg-secondary/8 rounded-full blur-[100px] pointer-events-none" speed={-0.18} />
       <div className="absolute top-10 left-10 opacity-[0.03] pointer-events-none">
         <Quote size={200} />
       </div>

@@ -1,6 +1,7 @@
 import { BookOpen, UtensilsCrossed, ShoppingCart, Snowflake, Repeat, CalendarDays, Users, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParallaxBlob from "@/components/ParallaxBlob";
 
 const features = [
   { icon: BookOpen, title: "Manual mensual completo", desc: "Todo organizado en un solo documento descargable.", color: "text-vino", bgColor: "bg-vino/10" },
@@ -18,8 +19,8 @@ const WhatIncludes = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-accent/45 via-miel-light/30 to-soft-peach/50 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-miel/30 to-transparent" />
-      <div className="absolute top-20 right-[5%] w-64 h-64 bg-miel/18 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-20 left-[5%] w-56 h-56 bg-coral/10 rounded-full blur-[80px] pointer-events-none" />
+      <ParallaxBlob className="absolute top-20 right-[5%] w-64 h-64 bg-miel/18 rounded-full blur-[100px] pointer-events-none" speed={-0.18} />
+      <ParallaxBlob className="absolute bottom-20 left-[5%] w-56 h-56 bg-coral/10 rounded-full blur-[80px] pointer-events-none" speed={0.15} />
 
       <div className="container-wide relative">
         <ScrollReveal>

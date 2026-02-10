@@ -1,6 +1,7 @@
 import { X, Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParallaxBlob from "@/components/ParallaxBlob";
 import beforeAfterImg from "@/assets/before-after.jpg";
 
 const before = [
@@ -22,8 +23,8 @@ const BeforeAfter = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-soft-peach/70 via-accent/25 to-soft-peach/50 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-terracota/20 to-transparent" />
-      <div className="absolute top-1/2 -left-24 w-72 h-72 bg-terracota/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-20 right-0 w-64 h-64 bg-primary/8 rounded-full blur-[80px] pointer-events-none" />
+      <ParallaxBlob className="absolute top-1/2 -left-24 w-72 h-72 bg-terracota/8 rounded-full blur-[100px] pointer-events-none" speed={-0.2} />
+      <ParallaxBlob className="absolute -bottom-20 right-0 w-64 h-64 bg-primary/8 rounded-full blur-[80px] pointer-events-none" speed={0.15} />
       <div className="container-tight relative">
         <ScrollReveal>
           <div className="text-center mb-12">
