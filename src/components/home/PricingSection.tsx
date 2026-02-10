@@ -5,7 +5,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const PricingSection = () => {
   return (
-    <section className="section-padding bg-mesh relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-soft-peach/50 via-background to-accent/20 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-coral/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
 
       <div className="container-tight text-center relative">

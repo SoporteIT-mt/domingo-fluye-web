@@ -34,7 +34,9 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="section-padding bg-gradient-section relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-soft-peach/60 to-background pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/15 to-transparent" />
       <div className="absolute top-10 left-10 opacity-[0.03] pointer-events-none">
         <Quote size={200} />
       </div>

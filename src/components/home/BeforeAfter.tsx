@@ -19,7 +19,9 @@ const after = [
 
 const BeforeAfter = () => {
   return (
-    <section className="section-padding bg-gradient-section relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-soft-peach/50 to-accent/15 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-terracota/10 to-transparent" />
       <div className="container-tight relative">
         <ScrollReveal>
           <div className="text-center mb-12">

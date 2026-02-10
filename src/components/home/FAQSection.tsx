@@ -18,7 +18,9 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="section-padding bg-mesh relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/20 to-soft-peach/40 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
       {/* Decorative icon */}
       <div className="absolute top-20 right-[8%] opacity-[0.03] pointer-events-none">
         <HelpCircle size={180} />
