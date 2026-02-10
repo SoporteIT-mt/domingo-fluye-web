@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import { CircleAlert, Clock, ShoppingCart, Pizza, Brain, HeartCrack } from "lucide-react";
 
 const pains = [
-  { emoji: "😩", text: "\"¿Qué comemos hoy?\" — todos los días lo mismo." },
-  { emoji: "⏰", text: "No tenés tiempo ni para pensar el menú." },
-  { emoji: "🛒", text: "Ir al súper todos los días y gastar de más." },
-  { emoji: "🍕", text: "Improvisar y terminar pidiendo delivery." },
-  { emoji: "🧠", text: "Cansancio mental que se acumula sin parar." },
-  { emoji: "😮‍💨", text: "Sentir que nunca llegás a todo." },
+  { icon: CircleAlert, text: "\"¿Qué comemos hoy?\" — todos los días lo mismo.", color: "text-primary" },
+  { icon: Clock, text: "No tenés tiempo ni para pensar el menú.", color: "text-terracota" },
+  { icon: ShoppingCart, text: "Ir al súper todos los días y gastar de más.", color: "text-secondary" },
+  { icon: Pizza, text: "Improvisar y terminar pidiendo delivery.", color: "text-miel" },
+  { icon: Brain, text: "Cansancio mental que se acumula sin parar.", color: "text-vino" },
+  { icon: HeartCrack, text: "Sentir que nunca llegás a todo.", color: "text-primary" },
 ];
 
 const PainPoints = () => {
   return (
     <section className="section-padding bg-mesh relative overflow-hidden">
+      {/* Decorative dot pattern */}
       <div className="absolute top-10 right-10 opacity-[0.04] pointer-events-none">
         <div className="grid grid-cols-6 gap-4">
           {Array.from({ length: 24 }).map((_, i) => (
@@ -34,48 +36,19 @@ const PainPoints = () => {
           </div>
         </ScrollReveal>
 
-        {/* Infinite horizontal scroll of pain cards */}
-        <div className="relative overflow-hidden mb-12">
-          <div className="flex">
-            {[0, 1].map((set) => (
-              <motion.div
-                key={set}
-                className="flex shrink-0 gap-5"
-                animate={{ x: ["0%", "-100%"] }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 25,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {pains.map((pain, i) => (
-                  <div
-                    key={`${set}-${i}`}
-                    className="card-premium p-5 flex items-start gap-3 cursor-default min-w-[280px] sm:min-w-[320px]"
-                  >
-                    <span className="text-2xl flex-shrink-0 mt-0.5">{pain.emoji}</span>
-                    <span className="text-sm text-foreground/75 leading-relaxed">{pain.text}</span>
-                  </div>
-                ))}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* 3x2 static grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
+        {/* 3x2 grid with proper cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
           {pains.map((pain, i) => (
             <ScrollReveal key={i} delay={i * 0.08}>
               <motion.div
-                className="card-premium p-5 flex items-start gap-3 cursor-default h-full"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
+                className="bg-card rounded-2xl p-6 shadow-card border border-border flex items-start gap-4 cursor-default h-full group hover:border-primary/20 transition-colors"
+                whileHover={{ y: -4, boxShadow: "var(--shadow-warm-lg)" }}
+                transition={{ duration: 0.25 }}
               >
-                <span className="text-2xl flex-shrink-0 mt-0.5">{pain.emoji}</span>
-                <span className="text-sm text-foreground/75 leading-relaxed">{pain.text}</span>
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                  <pain.icon className={`w-5 h-5 ${pain.color}`} />
+                </div>
+                <span className="text-sm text-foreground/75 leading-relaxed pt-2">{pain.text}</span>
               </motion.div>
             </ScrollReveal>
           ))}
@@ -83,7 +56,7 @@ const PainPoints = () => {
 
         <ScrollReveal delay={0.5}>
           <div className="text-center">
-            <div className="inline-block bg-card rounded-2xl px-8 py-6 shadow-warm relative">
+            <div className="inline-block bg-card rounded-2xl px-8 py-6 shadow-warm border border-border relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-primary to-terracota rounded-full" />
               <p className="text-xl md:text-2xl font-display text-foreground">
                 No es falta de organización.

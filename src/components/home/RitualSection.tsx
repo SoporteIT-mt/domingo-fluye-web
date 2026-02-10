@@ -10,6 +10,7 @@ const ritualItems = [
     unit: "minutos",
     desc: "Una sola sesión de cocina.",
     gradient: "from-coral to-terracota",
+    bg: "bg-primary/5",
   },
   {
     icon: CalendarCheck,
@@ -17,6 +18,7 @@ const ritualItems = [
     unit: "vez por semana",
     desc: "Cocinás una vez y listo.",
     gradient: "from-miel to-terracota",
+    bg: "bg-miel/5",
   },
   {
     icon: Utensils,
@@ -24,13 +26,13 @@ const ritualItems = [
     unit: "días resueltos",
     desc: "Sin pensar, sin estrés.",
     gradient: "from-verde-pizarra to-secondary",
+    bg: "bg-secondary/5",
   },
 ];
 
 const RitualSection = () => {
   return (
     <section className="section-padding bg-gradient-section-reverse relative overflow-hidden">
-      {/* Decorative gradient orb */}
       <div className="absolute -top-32 -right-32 w-64 h-64 bg-miel/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -51,7 +53,7 @@ const RitualSection = () => {
           {ritualItems.map((item, i) => (
             <ScrollReveal key={item.number} delay={i * 0.15}>
               <motion.div
-                className="relative bg-card rounded-2xl p-8 shadow-card overflow-hidden group"
+                className="relative bg-card rounded-2xl p-8 shadow-card border border-border overflow-hidden group"
                 whileHover={{ y: -6, boxShadow: "var(--shadow-warm-lg)" }}
                 transition={{ duration: 0.3 }}
               >

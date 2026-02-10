@@ -38,7 +38,7 @@ const BeforeAfter = () => {
           {/* Center arrow (desktop) */}
           <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             <motion.div
-              className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-terracota flex items-center justify-center shadow-lg"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-terracota flex items-center justify-center shadow-lg border-4 border-background"
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -48,7 +48,7 @@ const BeforeAfter = () => {
 
           {/* Before */}
           <ScrollReveal delay={0.1}>
-            <div className="bg-card rounded-2xl p-8 border border-border relative overflow-hidden h-full">
+            <div className="bg-card rounded-2xl p-8 border border-border shadow-card relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-destructive/40 to-destructive/10" />
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-destructive/60 mb-6">Sin el Club</div>
               <ul className="space-y-4">
@@ -74,8 +74,8 @@ const BeforeAfter = () => {
           {/* After */}
           <ScrollReveal delay={0.25}>
             <motion.div
-              className="bg-card rounded-2xl p-8 border-2 border-primary/30 relative overflow-hidden h-full glow-primary"
-              whileHover={{ borderColor: "hsl(352 79% 65% / 0.5)" }}
+              className="bg-card rounded-2xl p-8 border-2 border-primary/20 shadow-card relative overflow-hidden h-full"
+              whileHover={{ borderColor: "hsl(352 79% 65% / 0.4)" }}
               transition={{ duration: 0.3 }}
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-miel" />
