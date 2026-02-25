@@ -1,19 +1,25 @@
+import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/home/HeroSection";
-import PainPoints from "@/components/home/PainPoints";
-import RitualSection from "@/components/home/RitualSection";
-import HowItWorks from "@/components/home/HowItWorks";
-import WhatIncludes from "@/components/home/WhatIncludes";
-import BeforeAfter from "@/components/home/BeforeAfter";
-import PricingSection from "@/components/home/PricingSection";
-import Testimonials from "@/components/home/Testimonials";
-import FAQSection from "@/components/home/FAQSection";
-import CreatorStory from "@/components/home/CreatorStory";
-import PriceContrast from "@/components/home/PriceContrast";
-import WhoIsItFor from "@/components/home/WhoIsItFor";
-import SEOHead from "@/components/SEOHead";
 import Marquee from "@/components/Marquee";
-import SectionConnector from "@/components/SectionConnector";
+import SEOHead from "@/components/SEOHead";
+
+const PainPoints = lazy(() => import("@/components/home/PainPoints"));
+const SectionConnector = lazy(() => import("@/components/SectionConnector"));
+const BeforeAfter = lazy(() => import("@/components/home/BeforeAfter"));
+const RitualSection = lazy(() => import("@/components/home/RitualSection"));
+const HowItWorks = lazy(() => import("@/components/home/HowItWorks"));
+const WhatIncludes = lazy(() => import("@/components/home/WhatIncludes"));
+const CreatorStory = lazy(() => import("@/components/home/CreatorStory"));
+const PriceContrast = lazy(() => import("@/components/home/PriceContrast"));
+const PricingSection = lazy(() => import("@/components/home/PricingSection"));
+const WhoIsItFor = lazy(() => import("@/components/home/WhoIsItFor"));
+const Testimonials = lazy(() => import("@/components/home/Testimonials"));
+const FAQSection = lazy(() => import("@/components/home/FAQSection"));
+
+const SectionFallback = () => (
+  <div className="min-h-[40vh]" aria-hidden="true" />
+);
 
 const Index = () => {
   return (
@@ -24,21 +30,23 @@ const Index = () => {
       />
       <HeroSection />
       <Marquee />
-      <PainPoints />
-      <SectionConnector variant="arrow" color="coral" />
-      <BeforeAfter />
-      <SectionConnector variant="dots" color="miel" />
-      <RitualSection />
-      <HowItWorks />
-      <WhatIncludes />
-      <CreatorStory />
-      <PriceContrast />
-      <SectionConnector variant="wave" color="terracota" />
-      <PricingSection />
-      <WhoIsItFor />
-      <Testimonials />
-      <SectionConnector variant="dots" color="verde-pizarra" />
-      <FAQSection />
+      <Suspense fallback={<SectionFallback />}>
+        <PainPoints />
+        <SectionConnector variant="arrow" color="coral" />
+        <BeforeAfter />
+        <SectionConnector variant="dots" color="miel" />
+        <RitualSection />
+        <HowItWorks />
+        <WhatIncludes />
+        <CreatorStory />
+        <PriceContrast />
+        <SectionConnector variant="wave" color="terracota" />
+        <PricingSection />
+        <WhoIsItFor />
+        <Testimonials />
+        <SectionConnector variant="dots" color="verde-pizarra" />
+        <FAQSection />
+      </Suspense>
     </Layout>
   );
 };

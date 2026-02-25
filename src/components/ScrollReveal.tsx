@@ -9,7 +9,7 @@ interface ScrollRevealProps {
 
 const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollRevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <motion.div
@@ -18,6 +18,7 @@ const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollRevealProps
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
       className={className}
+      style={{ willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>

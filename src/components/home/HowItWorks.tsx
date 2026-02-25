@@ -83,7 +83,7 @@ const HowItWorks = () => {
 
           <ScrollReveal delay={0.3}>
             <div className="hidden md:block rounded-2xl overflow-hidden shadow-card border border-border sticky top-32">
-              <img src={howItWorksImg} alt="Plan de recetas organizado" className="w-full h-auto object-cover" />
+              <img src={howItWorksImg} alt="Plan de recetas organizado" className="w-full h-auto object-cover" loading="lazy" decoding="async" />
             </div>
           </ScrollReveal>
         </div>
