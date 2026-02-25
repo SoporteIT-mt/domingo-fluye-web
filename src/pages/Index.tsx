@@ -8,6 +8,9 @@ import BeforeAfter from "@/components/home/BeforeAfter";
 import PricingSection from "@/components/home/PricingSection";
 import Testimonials from "@/components/home/Testimonials";
 import FAQSection from "@/components/home/FAQSection";
+import CreatorStory from "@/components/home/CreatorStory";
+import PriceContrast from "@/components/home/PriceContrast";
+import WhoIsItFor from "@/components/home/WhoIsItFor";
 import SEOHead from "@/components/SEOHead";
 import Marquee from "@/components/Marquee";
 import SectionConnector from "@/components/SectionConnector";
@@ -23,16 +26,16 @@ const Index = () => {
       <Marquee />
       <PainPoints />
       <SectionConnector variant="arrow" color="coral" />
-      <RitualSection />
-      <SectionConnector variant="dots" color="miel" />
-      <HowItWorks />
-      <SectionConnector variant="wave" color="verde-pizarra" />
-      <WhatIncludes />
-      <SectionConnector variant="arrow" color="terracota" />
       <BeforeAfter />
-      <SectionConnector variant="dots" color="coral" />
+      <SectionConnector variant="dots" color="miel" />
+      <RitualSection />
+      <HowItWorks />
+      <WhatIncludes />
+      <CreatorStory />
+      <PriceContrast />
+      <SectionConnector variant="wave" color="terracota" />
       <PricingSection />
-      <SectionConnector variant="wave" color="miel" />
+      <WhoIsItFor />
       <Testimonials />
       <SectionConnector variant="dots" color="verde-pizarra" />
       <FAQSection />
