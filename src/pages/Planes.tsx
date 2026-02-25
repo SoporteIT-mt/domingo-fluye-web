@@ -41,38 +41,32 @@ const Planes = () => {
         path="/planes"
       />
 
-      {/* Hero */}
+      {/* Hero + Pricing unified */}
       <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
         <div className="absolute inset-0 bg-gradient-to-b from-soft-peach via-background to-background pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-coral/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
 
         <div className="container-tight text-center relative">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6 bg-primary/5 px-5 py-2 rounded-full">
-              <Sparkles size={14} /> Plan único
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4 bg-primary/5 px-4 py-1.5 rounded-full">
+              Planes
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-5 leading-tight">
-              Organizá tu cocina{" "}
-              <span className="text-gradient-coral">este domingo</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 leading-tight">
+              Unirte al Club es simple.
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              Un solo plan, acceso completo. Sin sorpresas, sin letra chica.
+              Elegí tu plan y empezá este domingo.
             </p>
           </ScrollReveal>
-        </div>
-      </section>
 
-      {/* Single Pricing Card */}
-      <section className="pb-16 md:pb-24 relative">
-        <div className="container-tight">
-          <div className="max-w-md mx-auto">
+          <div className="max-w-md mx-auto mt-14">
             <ScrollReveal delay={0.1}>
               <motion.div
-                className="relative bg-card rounded-2xl p-8 md:p-10 border-2 border-primary/30 shadow-card flex flex-col overflow-hidden"
+                className="relative bg-card rounded-2xl p-8 md:p-10 border-2 border-primary/30 shadow-card flex flex-col"
                 whileHover={{ y: -4, boxShadow: "var(--shadow-warm-lg)" }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-terracota" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-terracota rounded-t-2xl" />
 
                 <motion.div
                   className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-terracota text-primary-foreground px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-lg whitespace-nowrap"
