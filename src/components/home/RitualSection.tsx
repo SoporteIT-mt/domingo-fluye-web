@@ -55,7 +55,7 @@ const RitualSection = () => {
 
         <ScrollReveal delay={0.1}>
           <div className="mb-10 rounded-2xl overflow-hidden shadow-card border border-border max-w-2xl mx-auto">
-            <img src={ritualImg} alt="Sesión de cocina dominical con ingredientes frescos" className="w-full h-48 md:h-64 object-cover" />
+            <img src={ritualImg} alt="Sesión de cocina dominical con ingredientes frescos" className="w-full h-48 md:h-64 object-cover" loading="lazy" decoding="async" />
           </div>
         </ScrollReveal>
 

@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   :root {
     --background: 35 30% 97%;
     --foreground: 25 25% 15%;

@@ -35,6 +35,8 @@ const HeroSection = () => {
           alt="Mesa de cocina con preparaciones del domingo organizadas en tuppers"
           className="w-full h-[120%] object-cover"
           loading="eager"
+          fetchPriority="high"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/70 to-foreground/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-foreground/30" />

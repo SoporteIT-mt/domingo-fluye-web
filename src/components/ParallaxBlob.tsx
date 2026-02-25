@@ -19,7 +19,7 @@ const ParallaxBlob = ({ className, speed = -0.15 }: ParallaxBlobProps) => {
     <motion.div
       ref={ref}
       className={className}
-      style={{ y }}
+      style={{ y, willChange: "transform" }}
     />
   );
 };
