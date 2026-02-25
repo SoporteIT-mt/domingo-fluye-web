@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { Check, ArrowRight, Sparkles, Star, Lock, Zap, XCircle } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroImage from "@/assets/hero-kitchen.jpg";
@@ -57,14 +57,17 @@ const HeroSection = () => {
       <motion.div className="relative container-wide py-24 md:py-36 lg:py-44" style={{ opacity }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
-            {/* Brand badge */}
+            {/* Social proof pill */}
             <motion.div
               variants={itemVariants}
               className="inline-flex items-center gap-2 glass-dark px-4 py-2 rounded-full mb-6"
             >
-              <Sparkles size={14} className="text-miel" />
-              <span className="text-sm font-semibold text-primary-foreground tracking-wide">Cocina en Flor</span>
-              <span className="text-xs text-primary-foreground/50">· El Club de los Domingos</span>
+              <span className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={13} className="text-miel fill-miel" />
+                ))}
+              </span>
+              <span className="text-sm font-medium text-primary-foreground">Más de 500 familias ya recuperaron su tiempo</span>
             </motion.div>
 
             <motion.h1
@@ -132,12 +135,16 @@ const HeroSection = () => {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-4 text-sm text-primary-foreground/60"
+              className="flex flex-wrap gap-4 text-sm text-primary-foreground/70"
             >
-              {["Cancelás cuando quieras", "Acceso inmediato", "Sin permanencia"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-miel/60" />
-                  {t}
+              {[
+                { icon: Lock, text: "Pago seguro" },
+                { icon: XCircle, text: "Cancelás con 1 clic" },
+                { icon: Zap, text: "Acceso inmediato" },
+              ].map(({ icon: Icon, text }) => (
+                <span key={text} className="flex items-center gap-1.5">
+                  <Icon size={14} className="text-miel" />
+                  {text}
                 </span>
               ))}
             </motion.div>
